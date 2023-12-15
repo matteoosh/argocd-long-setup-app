@@ -7,12 +7,12 @@ spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    repoURL: https://github.com/matteoosh/argocd-long-setup-app 
     targetRevision: HEAD
     path: dev
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: longsetup
 
   syncPolicy:
     syncOptions:

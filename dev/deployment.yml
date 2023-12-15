@@ -1,9 +1,7 @@
-# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  long_setup_dep
-  namespace: default
   labels:
     app:  long_setup_dep
 spec:
