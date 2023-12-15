@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: longsetup-application
-  namespace: longsetup
+  namespace: argocd
 spec:
   project: default
 
