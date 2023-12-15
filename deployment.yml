@@ -1,0 +1,32 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  long_setup_dep
+  namespace: default
+  labels:
+    app:  long_setup_dep
+spec:
+  selector:
+    matchLabels:
+      app: long_setup_dep
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  long_setup_dep
+    spec:
+      containers:
+      - name: probes-testing
+        image: registry.k8s.io/busybox
+        args:
+        - /bin/sh
+        - -c
+        - sleep 30; touch /tmp/healthy; sleep 600
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+          failureThreshold: 30
+          periodSeconds: 10
