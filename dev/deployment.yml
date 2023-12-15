@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  long_setup_dep
+  name:  long-setup-dep
   labels:
-    app:  long_setup_dep
+    app:  long-setup-dep
 spec:
   selector:
     matchLabels:
-      app: long_setup_dep
+      app: long-setup-dep
   replicas: 1
   template:
     metadata:
       labels:
-        app:  long_setup_dep
+        app:  long-setup-dep
     spec:
       containers:
       - name: probes-testing
